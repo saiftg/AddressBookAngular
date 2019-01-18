@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+
+<script src="scripts.js"></script>
+
+</head>
+<body>
+
+<div style="text-align:center">    
+	<a href="index.html">Go to Business Card View </a>
+</div>
+
+
+<div ng-view></div>
+
+
+
+<div ng-app="myApp" ng-controller="myCtrl">
+  
+    <table >
+
+    	<tr>
+    		<th>Customer ID</th>
+    		<th>COMPANY NAME</th>
+    		<th>CONTACT NAME</th>
+    		<th>CONTACT TITLE</th>
+    		<th>ADDRESS</th>
+    		<th>CITY AND POSTAL CODE</th>
+    		<th>COUNTRY</th>
+    		<th>EMAIL</th>
+    		<th>PHONE</th>
+    		<th>FAX</th>
+
+    	</tr>
+
+
+    	<tr  ng-repeat="x in people">
+
+    	<td>{{x.CustomerID}}</td> 
+    	<td>{{x.CompanyName}} </td>
+        <td>{{x.ContactName}} </td>
+        <td>{{x.ContactTitle}} </td>
+    	<td>{{x.Address}} </td>
+        <td>{{x.City}} - {{x.PostalCode}} </td>
+        <td>{{x.Country}} </td>
+        <td>{{x.Email}} </td>
+        <td>(P): {{x.Phone}} </td>
+    	<td>(F): {{x.Fax}} </td>
+       </tr>
+      
+    </table>
+</div>
+
+
+
+</body>
+</html>
